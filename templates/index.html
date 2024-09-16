@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Caption Generator</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>AI-Powered Image Caption Generator</h1>
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <label for="file">Upload an Image:</label>
+            <input type="file" name="file" id="file" required>
+            <button type="submit">Generate Caption</button>
+        </form>
+        {% if caption %}
+        <div class="result">
+            <h2>Generated Caption:</h2>
+            <p>{{ caption }}</p>
+            <img src="{{ image_url }}" alt="Uploaded Image">
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
